@@ -5,10 +5,11 @@ import { Tab, Tabs } from "@mui/material";
 
 const PageTab = ({ tabs, activeTab, handleChange }) => {
 
+
     return (
-        <Tabs value={activeTab} textColor="#fff" indicatorColor="#fff" onChange={handleChange} sx={{
+        <Tabs variant="scrollable" value={activeTab} textColor="inherit" indicatorColor="#fff" onChange={handleChange} sx={{
             minHeight: '36px',
-            height: '36px'
+            height: '36px',
         }}>
             {tabs.map((tab, index) => (
                 <Tab
@@ -18,11 +19,22 @@ const PageTab = ({ tabs, activeTab, handleChange }) => {
                         minHeight: '34px',
                         height: '34px',
                         flex: tab.val,
-                        paddingInline: '32px',
+                        paddingInline:{
+                            xs: 0.5,
+                            sm: 2.5,
+                            md: 4.5
+                            
+                            
+                        },
                         borderLeft: '2px solid #A8A8A8',
                         borderRight: tab.borderRight,
                         borderBlock: '2px solid #A8A8A8',
                         backgroundColor: activeTab === index ? '#74E249 ' : '',
+                        fontSize: {
+                            md: 16,
+                            sm: 12,
+                            xs: 10
+                        }
                     }}
                 />
             ))}
